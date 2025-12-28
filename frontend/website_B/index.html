@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Website B - ゲームレビュー</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header><h1>ゲームレビュー CRUD ページ</h1></header>
+    <main id="main-content">
+        <h2>レビュー管理</h2>
+        
+        <button id="add-review-btn">新規レビューを追加</button>
+        
+        <div id="add-form-container" class="form-container" style="display:none;">
+            <h3>新規ゲームレビュー追加</h3>
+            <form id="add-review-form"> 
+                <label>タイトル: <input type="text" name="title" required></label>
+                <label>コメント: <textarea name="comment" required></textarea></label>
+                <label>チャート画像ファイル名: <input type="text" name="chartImage" value="default_chart.png"></label>
+                
+            <h4>5段階評価 (1~5点)</h4>
+                <label>ストーリー: <input type="number" name="story" min="1" max="5" required></label>
+                <label>世界観: <input type="number" name="setting" min="1" max="5" required></label>
+                <label>キャラクター: <input type="number" name="character" min="1" max="5" required></label>
+                <label>ゲーム性: <input type="number" name="gameplay" min="1" max="5" required></label>
+                <label>オリジナル項目: <input type="number" name="original" min="1" max="5" required></label>
+                
+                <button type="submit">レビュー追加</button>
+            </form>
+        </div>
+
+        <div id="edit-form-container" class="form-container" style="display:none;">
+            <h3>レビュー編集</h3>
+            <form id="edit-review-form">
+                <input type="hidden" name="id">
+                <label>タイトル: <input type="text" name="title" required></label>
+                <label>コメント: <textarea name="comment" required></textarea></label>
+                <label>チャート画像ファイル名: <input type="text" name="chartImage" required></label>
+                
+                <h4>5段階評価 (1~5点)</h4>
+                    <label>ストーリー: <input type="number" name="story" min="1" max="5" required></label>
+                    <label>世界観: <input type="number" name="setting" min="1" max="5" required></label>
+                    <label>キャラクター: <input type="number" name="character" min="1" max="5" required></label>
+                    <label>ゲーム性: <input type="number" name="gameplay" min="1" max="5" required></label>
+                    <label>オリジナル項目: <input type="number" name="original" min="1" max="5" required>
+                    </label>required></label>
+
+                <button type="submit">更新実行</button>
+                <button type="button" id="cancel-edit-btn">キャンセル</button>
+            </form>
+        </div>
+
+        <div id="review-list">
+            </div>
+    </main>
+
+    <script type="module" src="./app.js"></script> 
+</body>
+</html>
